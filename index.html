@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>CC</title>
+  <link rel="shortcut icon" href="mm48.ico" type="image/x-icon">
+  <!-- <script>
+    var speed = 10
+    var currentpos = 0,
+      alt = 1,
+      curpos1 = 0,
+      curpos2 = -1
+
+    function initialize() {
+      startit()
+    }
+
+    function scrollwindow() {
+      if (document.all &&
+        !document.getElementById)
+        temp = document.body.scrollTop
+      else
+        temp = window.pageYOffset
+      if (alt == 0)
+        alt = 2
+      else
+        alt = 1
+      if (alt == 0)
+        curpos1 = temp
+      else
+        curpos2 = temp
+      if (curpos1 != curpos2) {
+        if (document.all)
+          currentpos = document.body.scrollTop + speed
+        else
+          currentpos = window.pageYOffset + speed
+        window.scroll(0, currentpos)
+      } else {
+        currentpos = 0
+        window.scroll(0, currentpos)
+      }
+    }
+
+    function startit() {
+      setInterval("scrollwindow()", 50)
+    }
+    window.onload = initialize
+  </script> -->
+  <style>
+    html {
+      cursor: none;
+    }
+
+    body {
+      cursor: none !important;
+      font-family: sans-serif;
+      font-size: 48px;
+      background: black;
+      text-transform: uppercase;
+      color: white;
+      margin: 0;
+    }
+
+    img {
+      cursor: none;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      z-index: 100;
+      width: 200vw;
+      height: auto;
+      opacity: .9;
+
+
+      -webkit-filter: blur10px);
+      filter: blur(10px);
+
+      /*Would Need Webkit prefixes... Cursor is now Center of Puppy*/
+    }
+
+    h1 {
+      cursor: none;
+      width: 100%;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+    }
+
+    #nav {
+      z-index: 999;
+
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      color: white;
+    }
+
+    #nav a:hover {
+      cursor: pointer;
+      color: yellow;
+    }
+
+    @media (max-width: 500px) {
+      img {
+        height: 200vh;
+        width: auto;
+
+      }
+    }
+  </style>
+
+</head>
+
+<body onload="pageScroll()">
+
+
+  <!--  <img src="X2.png" /> -->
+  <img src="images/9.jpg">
+  <!--   <h1>CARR CARR CARR</h1> -->
+
+
+  <div id='nav'>
+    <!--     <h3><a href="mystic.html"> Menu </a>
+  </h3>
+    <h3><a href="mystic.html"> Menu </a>
+</h3>
+    <h3><a href="mystic.html"> Menu </a>
+</h3> -->
+
+  </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).mousemove(function(e) {
+    $('img').css({
+      left: e.pageX,
+      top: e.pageY
+    });
+  });
+
+  var imageSrc = ['images/CARR.jpg', 'images/CARR3.png'];
+  var selector = Math.floor(Math.random() * imageSrc.length);
+  console.log(selector);
+  $('img').attr("src", imageSrc[selector]);
+
+  function pageScroll() {
+    window.scrollBy(0, 1);
+    scrolldelay = setTimeout(pageScroll, 10);
+  }
+
+  //Needs SVG animation for onClick or Hover or whatever
+  //Maybe add/remove css to load an animated .gif if things go sour...
+</script>
+
+</html>
