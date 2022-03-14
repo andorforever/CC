@@ -1,160 +1,145 @@
-<!DOCTYPE HTML>
 <html>
-
 <head>
-  <title>C C</title>
-<!--   <link rel="shortcut icon" href="mm48.ico" type="image/x-icon"> -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-  <!-- <script>
-    var speed = 10
-    var currentpos = 0,
-      alt = 1,
-      curpos1 = 0,
-      curpos2 = -1
+  <title>the wall</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/dimslaev/wheeler@c1a53/dist/wheeler.min.js"></script>
+<style>
+  body, html {
+    margin: 0;
+    background-color: black;
+  }
 
-    function initialize() {
-      startit()
-    }
+  .content {
+    width:100%;
+  }
 
-    function scrollwindow() {
-      if (document.all &&
-        !document.getElementById)
-        temp = document.body.scrollTop
-      else
-        temp = window.pageYOffset
-      if (alt == 0)
-        alt = 2
-      else
-        alt = 1
-      if (alt == 0)
-        curpos1 = temp
-      else
-        curpos2 = temp
-      if (curpos1 != curpos2) {
-        if (document.all)
-          currentpos = document.body.scrollTop + speed
-        else
-          currentpos = window.pageYOffset + speed
-        window.scroll(0, currentpos)
-      } else {
-        currentpos = 0
-        window.scroll(0, currentpos)
-      }
-    }
+  #viewport { 
+    overflow:auto;
+    position:fixed;
+    -webkit-perspective: 180px; /* Distance (lower number higher distance) */
+    -ms-perspective: 180px;
+    perspective: 180px;
+    -webkit-perspective-origin: 50% 50%;
+    -ms-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
 
-    function startit() {
-      setInterval("scrollwindow()", 50)
-    }
-    window.onload = initialize
-  </script> -->
-  <style>
-    html {
-      cursor: none;
-    }
-
-    body {
-      cursor: none !important;
-      font-family: sans-serif;
-      font-size: 48px;
-   /*   background-image: url("images/CARR3.png");*/
-      text-transform: uppercase;
-      color: white;
-      margin: 0;
-    }
-
-    img {
-      cursor: none;
-      position: absolute;
-      transform: translate(-50%, -50%);
-      -webkit-transform: translate(-50%, -50%);
-      z-index: 100;
-      width: 300vw;
-      height: auto;
-      opacity: .9;
-/*
-  width: 200vw;*/
-      -webkit-filter: blur10px);
-      filter: blur(10px);
-
-      /*Would Need Webkit prefixes... Cursor is now Center of Puppy*/
-    }
-
-    h1 {
-      cursor: none;
-      width: 100%;
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      text-align: center;
-    }
-
-    #nav {
-      z-index: 999;
-
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      color: white;
-    }
-
-    #nav a:hover {
-      cursor: pointer;
-      color: yellow;
-    }
-
-    @media (max-width: 500px) {
-      img {
-        height: 200vh;
-        width: auto;
-
-      }
-    }
-  </style>
-
-</head>
-
-<body onload="pageScroll()">
+  .box {
+    position:absolute;
+    width:1200px;
+    height:800px;
+    left: 50%;
+    top: 50%;
+    margin-left: -600px;
+    margin-top: -400px;
+   }
+</style>
 
 
-  <!--  <img src="X2.png" /> -->
-  <img src="images/9.jpg">
-  <!--   <h1>CARR CARR CARR</h1> -->
+<body>
+  <div class="content">         
+    <div id="viewport">
+      <div class="background box"><img src="images/2.png"></div>
 
-
-  <div id='nav'>
-    <!--     <h3><a href="mystic.html"> Menu </a>
-  </h3>
-    <h3><a href="mystic.html"> Menu </a>
-</h3>
-    <h3><a href="mystic.html"> Menu </a>
-</h3> -->
-
+      <div class="wall box"><img src="images/1.png"></div>
+      <div class="wall box"><img src="images/3.png"></div>
+      <div class="wall box"><img src="images/4.png"></div>
+      <div class="wall box"><img src="images/5.png"></div>
+      <div class="wall box"><img src="images/6.png"></div>
+      <div class="wall box"><img src="images/7.png"></div>
+      <div class="wall box"><img src="images/8.png"></div>
+      <div class="wall box"><img src="images/9.png"></div>
+      <div class="wall box"><img src="images/10.png"></div>
+      <div class="wall box"><img src="images/11.png"></div>
+      <div class="wall box"><img src="images/12.png"></div>
+      <div class="wall box"><img src="images/13.png"></div>
+      <div class="wall box"><img src="images/14.png"></div>
+      <div class="wall box"><img src="images/15.png"></div>
+      <div class="wall box"><img src="images/16.png"></div>
+      <div class="wall box"><img src="images/17.png"></div>
+      <div class="wall box"><img src="images/18.png"></div>
+      <div class="wall box"><img src="images/19.png"></div>
+      <div class="wall box"><img src="images/20.png"></div>
+      <div class="wall box"><img src="images/21.png"></div>
+      <div class="wall box"><img src="images/22.png"></div>
+      <div class="wall box"><img src="images/23.png"></div>
+    </div>
   </div>
-
+  
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script type="text/javascript">
-  $(document).mousemove(function(e) {
-    $('img').css({
-      left: e.pageX,
-      top: e.pageY
+
+
+<script>
+
+  // TODO:
+  // - CSS transforms
+  // - compress images
+
+  function mod(n, m) {
+    return ((n % m) + m) % m;
+  }
+
+  var background = document.querySelector(".background");
+  var walls = document.querySelectorAll(".wall");
+
+  var initialOffset = 150;
+  var boxOffset = -50;
+  var wallPositions = Array.from(walls).map((wall, index) => boxOffset * index).reverse();
+  var backgroundPosition = wallPositions[0] + boxOffset;
+  var cameraPosition = 0;
+  var maxWallPosition = wallPositions[0];
+
+
+  applyTransform(background, backgroundPosition);
+
+  function updateWalls() {
+    
+    for (var i = 0; i < walls.length; i++) {
+      // -1050 < position < 0
+      var position = mod(wallPositions[i] + cameraPosition, maxWallPosition);
+      // 0 < zIndex < 1050
+      var zIndex = position - maxWallPosition;
+      // var zIndex = - position;
+      applyTransform(walls[i], initialOffset + position);
+      walls[i].style["z-index"] = zIndex;
+    }
+  }
+  updateWalls();
+
+  function applyTransform(element, position) {
+    element.style['-webkit-transform'] = "translateZ(" + position + "px)";
+    element.style['-ms-transform'] = "translateZ(" + position + "px)";
+    element.style['transform'] = "translateZ(" + position + "px)";
+  }
+
+  function handleScroll(delta) {
+    cameraPosition += delta;
+    updateWalls();
+  }
+
+  $(document).on('wheel', function (e) {
+    handleScroll(e.originalEvent.deltaY);
+  });
+
+  $(document).on('touchstart', function (e) {
+    var startingY = e.originalEvent.touches[0].pageY;
+    $(document).on('touchmove', function(e) {
+      currentY = e.originalEvent.touches[0].pageY;
+      var delta = startingY - currentY;
+      handleScroll(delta);
+    });
+    $(document).on('touchend', function() {
+      $(document).unbind('touchmove');
+      $(document).unbind('touchend');
     });
   });
 
-  var imageSrc = ['images/CARR5.png', 'images/CARR5.png'];
-  var selector = Math.floor(Math.random() * imageSrc.length);
-  console.log(selector);
-  $('img').attr("src", imageSrc[selector]);
-
-  function pageScroll() {
-    window.scrollBy(0, 1);
-    scrolldelay = setTimeout(pageScroll, 10);
-  }
-
-  //Needs SVG animation for onClick or Hover or whatever
-  //Maybe add/remove css to load an animated .gif if things go sour...
 </script>
 
+
+</body>
 </html>
